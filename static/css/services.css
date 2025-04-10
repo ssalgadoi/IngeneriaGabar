@@ -1,0 +1,130 @@
+.slider__container {
+    width: 100%;
+    background-color: rgb(228, 228, 228);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.slider__title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 3.9rem;
+    padding: 4px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.slide__content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card__wrapper {
+    display: flex;
+}
+
+.card {
+    width: 300px; /* Ajusta según tu diseño */
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.image__box {
+    height: 200px;
+    width: 100%;
+}
+
+.image__box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+.profile__details {
+    padding: 15px;
+}
+
+.name__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.name__description {
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+.card__button {
+    margin-top: auto; /* Asegura que el botón siempre esté en la parte inferior */
+    padding: 5px 15px;
+    background-color: #1d690d;
+    color: #e9e9e9;
+    font-size: 16px;
+ 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.card__button:hover {
+    background-color: #86be2c;
+    transform: scale(1.05);
+    color: black;
+}
+
+.layout__contacto {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.layout__title {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333; 
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}

@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Inicio
+{% endblock %}
+
+{% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Imágenes -->
+  <div class="carousel-inner">
+    {% for service in services %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <div class="carousel-img-container">
+        <img src="{{ service.imagen.url }}" class="d-block w-100" alt="Imagen de {{ service.nombre }}">
+        <!-- <h3 class="carousel-title">{{ service.title }}</h3>  -->
+        <div class="carousel-caption d-md-block">
+          <div class="black-bar">
+            <a href="{% url 'services:service_detail' service.id %}" class="carousel__link">
+              <h3>{{ service.title }}</h3>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Botones de navegación -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+
+<!-- Sección Nosotros -->
+<section id="nosotros" class="about__us">
+  <h2 class="title__general">Sobre Nosotros</h2>
+  <div class="about__content">
+    <div class="about__image">
+      <img src="{% static 'img/ingeneria01.webp' %}" alt="Imagen de Ingeniería Gabar">
+    </div>
+    <div class="about__text">
+      <p>
+        <strong>INGENIERÍA GABAR</strong> está ubicada en <strong>Viña del Mar, Región de Valparaíso</strong>, con una sucursal en <strong>Santiago</strong>.  
+        Somos una empresa de <strong>profesionales senior</strong> con más de <strong>25 años de experiencia</strong> en:
+      </p>
+      <ul>
+        <li>Industria del Chancado</li>
+        <li>Industria Cementera</li>
+        <li>Construcción</li>
+        <li>Energía</li>
+        <li>Minería</li>
+      </ul>
+      <p>
+        Nuestro objetivo es contribuir al <strong>desarrollo económico y social</strong>, generando <strong>progreso y bienestar</strong> para nuestros clientes.  
+        Contamos con un equipo multidisciplinario de <strong>ingenieros y técnicos especializados</strong>, ofreciendo soluciones <strong>innovadoras y de calidad</strong> en cada proyecto.
+      </p>
+      <p>
+        Brindamos servicios en:
+      </p>
+      <ul>
+        <li><strong>Metal Mecánica</strong></li>
+        <li><strong>Montaje Industrial</strong></li>
+        <li><strong>Mantenimiento Industrial</strong></li>
+        <li><strong>Evaluación de Proyectos</strong></li>
+        <li><strong>Ingeniería del Metaverso</strong></li>
+        <li><strong>Ingeniería Eléctrica</strong></li>
+        <li><strong>Generadores Eléctricos con Energías Renovables</strong></li>
+        <li><strong>Control Automático</strong></li>
+      </ul>
+      <p>
+        En <strong>INGENIERÍA GABAR</strong>, estamos comprometidos con la <strong>excelencia</strong> en cada obra o proyecto.  
+        <strong>¡Cuente con nosotros para llevar sus ideas al siguiente nivel!</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Sección Proyectos -->
+<section id="servicios" class="slider__container">
+  <h2 class="title__general">Servicios</h2>
+  <div class="slide__content swiper">
+    <div class="card__wrapper swiper-wrapper">
+      {% for service in services %}
+      <div class="card swiper-slide">
+        <div class="image__box">
+          <img src="{{ service.imagen.url }}" alt="Imagen de {{ service.title }}">
+        </div>
+        <div class="profile__details">
+          <div class="name__job">
+            <h3 class="name__title">{{ service.title }}</h3>
+            <p class="name__description">{{ service.description }}</p>
+          </div>
+
+        </div>
+        <a href="{% url 'services:service_detail' service.id %}" class="card__button">Leer Más</a>
+      </div>
+
+      {% endfor %}
+    </div>
+    <!-- Botones de navegación -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+<section id="contacto" class="contact__layout">
+  <div class="contact__nav-container">
+    <!-- Barra de navegación con logo y enlaces -->
+    <nav class="contact__nav">
+      <div class="contact__logo">
+        <a href="{% url 'index' %}" class="contact__logo-link">
+          <img class="contact__logo-img" src="{% static 'img/Logo.webp' %}" alt="Logo">
+        </a>
+      </div>
+
+      <div class="contact__links">
+        <ul class="contact__menu" id="menuList">
+          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#inicio">Inicio</a></li>
+          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#nosotros">Nosotros</a></li>
+          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#servicios">Servicios</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Información de contacto -->
+    <div class="contact__info-container">
+      <div class="contact__info">
+        <h2 class="contact__title">Contacto</h2>
+        <ul class="contact__list">
+          <li><strong>Email:</strong> <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></li>
+          <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
+          <li><strong>Ubicación:</strong> Santiago, Chile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

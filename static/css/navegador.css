@@ -1,0 +1,269 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+}
+
+.title__general {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    /* Color institucional */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.title__general::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: rgb(50, 151, 67);
+    /* Color institucional */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.layout__nav {
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    border-bottom: 4px solid rgb(50, 151, 67); 
+}
+
+.layout__ul {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    transition: max-height 0.3s ease; /* Transición para apertura suave */
+}
+
+.layout__item {
+    list-style-type: none;
+}
+
+.layout__link {
+    position: relative;
+    font-size: 1.9rem;
+    font-weight: 450;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    transition: color 0.1s ease; /* Solo se aplica la transición al color */
+}
+
+
+
+.layout__link:hover {
+    color: rgb(50, 151, 67); /* Cambia solo el color del texto */
+    padding: 5px; /* Mantiene el padding sin incremento */
+    border-radius: 2px; /* Mantiene el borde redondeado si es necesario */
+}
+
+.layout__logo a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del padre para que no cambie */
+}
+
+.layout__logo h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.layout__icons {
+    font-size: 30px;
+    display: none;
+}
+
+
+/* Estilos para el logo */
+.logo {
+    line-height: 70px; /* Ajusta el line-height según el tamaño del contenedor */
+    padding: 0 20px; /* Espacios alrededor del logo */
+    text-decoration: none; /* Quitar decoración de texto */
+}
+
+.image {
+    width: 70%; /* Hacer que la imagen sea responsiva */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Margen a la derecha de la imagen para separación */
+}
+
+/* Botón para scroll hacia arriba */
+.scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #747474;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #575757;
+}
+
+.layout__footer {
+    position: relative;
+    width: 100%;
+    background: #000000;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.layout__menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.layout__element {
+    list-style: none;
+}
+
+.layout__icon {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.layout__icon:hover {
+    opacity: 1;
+    background-color: black;
+    padding: 1.3px;
+    border-radius: 2px;
+    border: 1px solid white;
+}
+
+.layout__year {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Responsivo para pantallas grandes */
+@media (min-width: 1024px) {
+    .layout__nav {
+        padding: 20px 80px;
+    }
+
+    .layout__ul {
+        gap: 50px;
+    }
+
+    .layout__logo h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Responsivo para tabletas */
+@media (max-width: 768px) {
+    .layout__nav {
+        padding: 20px 30px;
+    }
+
+    .layout__ul {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+        max-height: 0; /* Inicializa el max-height */
+        transition: max-height 0.3s ease; /* Animación para el despliegue */
+        z-index: 10;
+    }
+
+    .layout__ul.menu-open {
+        max-height: 300px; /* Altura del menú desplegado */
+        overflow-y: auto; /* Permite desplazamiento vertical */
+    }
+
+    .layout__item {
+        padding: 20px;
+    }
+
+    .layout__icons {
+        display: block;
+        text-align: end;
+    }
+
+    .layout__logo h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Menú hamburguesa */
+    .layout__icons {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .layout__icons.open {
+        color: red; /* Cambiar color cuando se abre el menú */
+    }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+    .layout__nav {
+        padding: 10px;
+    }
+
+    .layout__logo h1 {
+        font-size: 2rem;
+    }
+
+    .layout__icons {
+        font-size: 25px;
+    }
+
+    .image {
+        width: 100%; /* Asegura que la imagen se ajuste a la pantalla */
+        height: auto;
+    }
+}
