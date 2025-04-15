@@ -54,9 +54,46 @@
 
         {% block content %}
         {% endblock %}
+        <section id="contacto" class="contact__layout">
+            <div class="contact__nav-container">
+                <!-- Barra de navegación con logo y enlaces -->
+                <nav class="contact__nav">
+                    <div class="contact__logo">
+                        <a href="{% url 'index' %}" class="contact__logo-link">
+                            <img class="contact__logo-img" src="{% static 'img/Logo.webp' %}" alt="Logo">
+                        </a>
+                    </div>
+
+                    <div class="contact__links">
+                        <ul class="contact__menu" id="menuList">
+                            <li class="contact__menu-item"><a class="contact__menu-link"
+                                    href="{% url 'index' %}#inicio">Inicio</a></li>
+                            <li class="contact__menu-item"><a class="contact__menu-link"
+                                    href="{% url 'index' %}#nosotros">Nosotros</a></li>
+                            <li class="contact__menu-item"><a class="contact__menu-link"
+                                    href="{% url 'index' %}#servicios">Servicios</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Información de contacto -->
+                <div class="contact__info-container">
+                    <div class="contact__info">
+                        <h2 class="contact__title">Contacto</h2>
+                        <ul class="contact__list">
+                            <li><strong>Email:</strong> <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
+                            </li>
+                            <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
+                            <li><strong>Ubicación:</strong> Santiago, Chile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer class="layout__footer">
-            
+
             <p class="layout__year">Ingenería GABAR <span>&copy;</span> <span id="current-year"></span></p>
         </footer>
 
@@ -64,7 +101,7 @@
             <i class="fa-solid fa-arrow-up"></i>
         </button>
 
-        
+
         <script src="{% static 'js/index.js' %}"></script>
     </body>
 

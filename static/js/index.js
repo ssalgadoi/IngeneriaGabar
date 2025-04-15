@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".swiper", {
-        direction: "horizontal", // Deslizar de forma horizontal
-        loop: false, // No repetir infinitamente
-        slidesPerView: 3, // Mostrar 3 tarjetas a la vez
-        spaceBetween: 20, // Espacio entre las tarjetas
+        direction: "horizontal",
+        loop: false,
+        slidesPerView: 3,
+        spaceBetween: 20,
+
+        watchOverflow: true, // 🔥 Esta línea evita el desplazamiento cuando ya no hay más tarjetas
 
         pagination: {
             el: ".swiper-pagination",
-            clickable: true, // Permite hacer clic en los puntos de paginación
+            clickable: true,
         },
 
         navigation: {
@@ -19,7 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
             el: ".swiper-scrollbar",
         },
 
-        autoplay: false, // No cambia automáticamente
+        autoplay: false,
+
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            480: {
+                slidesPerView: 1,
+            },
+        },
     });
 });
 

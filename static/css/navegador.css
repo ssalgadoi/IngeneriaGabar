@@ -15,16 +15,20 @@ html {
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
+    background-color: black;
+    background-image: url('../img/fondoBody.png'); /* Ruta de la imagen */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen cuando se hace scroll */
 }
-
 .title__general {
     font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 254, 254);
     /* Color institucional */
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     position: relative;
 }
 
@@ -134,9 +138,8 @@ body {
 .layout__footer {
     position: relative;
     width: 100%;
-    background: #000000;
     min-height: 100px;
-    padding: 20px 50px;
+    padding: 10px 50px;
     display: flex;
     justify-content: center;
     align-items: center;

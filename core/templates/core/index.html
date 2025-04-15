@@ -93,11 +93,15 @@ Inicio
 
 <!-- Sección Proyectos -->
 <section id="servicios" class="slider__container">
-  <h2 class="title__general">Servicios</h2>
-  <div class="slide__content swiper">
-    <div class="card__wrapper swiper-wrapper">
+  <h2 class="title__services">Servicios</h2>
+
+  <!-- Swiper principal -->
+  <div class="swiper slide__content">
+    
+    <!-- Contenedor de tarjetas -->
+    <div class="swiper-wrapper">
       {% for service in services %}
-      <div class="card swiper-slide">
+      <div class="swiper-slide card">
         <div class="image__box">
           <img src="{{ service.imagen.url }}" alt="Imagen de {{ service.title }}">
         </div>
@@ -106,13 +110,12 @@ Inicio
             <h3 class="name__title">{{ service.title }}</h3>
             <p class="name__description">{{ service.description }}</p>
           </div>
-
         </div>
         <a href="{% url 'services:service_detail' service.id %}" class="card__button">Leer Más</a>
       </div>
-
       {% endfor %}
     </div>
+
     <!-- Botones de navegación -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -128,39 +131,7 @@ Inicio
 
 
 
-<section id="contacto" class="contact__layout">
-  <div class="contact__nav-container">
-    <!-- Barra de navegación con logo y enlaces -->
-    <nav class="contact__nav">
-      <div class="contact__logo">
-        <a href="{% url 'index' %}" class="contact__logo-link">
-          <img class="contact__logo-img" src="{% static 'img/Logo.webp' %}" alt="Logo">
-        </a>
-      </div>
 
-      <div class="contact__links">
-        <ul class="contact__menu" id="menuList">
-          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#inicio">Inicio</a></li>
-          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#nosotros">Nosotros</a></li>
-          <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#servicios">Servicios</a></li>
-
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Información de contacto -->
-    <div class="contact__info-container">
-      <div class="contact__info">
-        <h2 class="contact__title">Contacto</h2>
-        <ul class="contact__list">
-          <li><strong>Email:</strong> <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></li>
-          <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
-          <li><strong>Ubicación:</strong> Santiago, Chile</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
