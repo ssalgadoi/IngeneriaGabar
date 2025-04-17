@@ -1,41 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const swiper = new Swiper(".swiper", {
-        direction: "horizontal",
-        loop: false,
-        slidesPerView: 3,
+    const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        slidesPerView: "auto",
         spaceBetween: 20,
-
-        watchOverflow: true, // 🔥 Esta línea evita el desplazamiento cuando ya no hay más tarjetas
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-
+        speed: 3000,
+        //   autoplay: {
+        //     delay: 1,
+        //     disableOnInteraction: false,
+        //     pauseOnMouseEnter: false,
+        //   },
+        grabCursor: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-
-        autoplay: false,
-
-        breakpoints: {
-            1024: {
-                slidesPerView: 3,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            480: {
-                slidesPerView: 1,
-            },
-        },
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

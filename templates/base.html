@@ -56,46 +56,44 @@
         {% endblock %}
         <section id="contacto" class="contact__layout">
             <div class="contact__nav-container">
-                <!-- Barra de navegación con logo y enlaces -->
+                <!-- Columna 1: Barra de navegación -->
                 <nav class="contact__nav">
                     <div class="contact__logo">
                         <a href="{% url 'index' %}" class="contact__logo-link">
                             <img class="contact__logo-img" src="{% static 'img/Logo.webp' %}" alt="Logo">
                         </a>
                     </div>
-
                     <div class="contact__links">
                         <ul class="contact__menu" id="menuList">
-                            <li class="contact__menu-item"><a class="contact__menu-link"
-                                    href="{% url 'index' %}#inicio">Inicio</a></li>
-                            <li class="contact__menu-item"><a class="contact__menu-link"
-                                    href="{% url 'index' %}#nosotros">Nosotros</a></li>
-                            <li class="contact__menu-item"><a class="contact__menu-link"
-                                    href="{% url 'index' %}#servicios">Servicios</a></li>
-
+                            <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#inicio">Inicio</a></li>
+                            <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#nosotros">Nosotros</a></li>
+                            <li class="contact__menu-item"><a class="contact__menu-link" href="{% url 'index' %}#servicios">Servicios</a></li>
                         </ul>
                     </div>
                 </nav>
-
-                <!-- Información de contacto -->
+        
+                <!-- Columna 2: Información de contacto -->
                 <div class="contact__info-container">
                     <div class="contact__info">
                         <h2 class="contact__title">Contacto</h2>
                         <ul class="contact__list">
-                            <li><strong>Email:</strong> <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
-                            </li>
-                            <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
+                            <li><strong>Email:</strong> <a href="mailto:contacto@Ingegabar.cl">contacto@Ingegabar.cl</a></li>
+                            <li><strong>Teléfono:</strong>+56 9 32654361 </li>
                             <li><strong>Ubicación:</strong> Santiago, Chile</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        
+            <!-- Año: lo colocamos justo abajo de ambos bloques -->
+            <p class="layout__year">Ingeniería GABAR <span>&copy;</span> <span id="current-year"></span></p>
         </section>
+        
 
-        <footer class="layout__footer">
+        <!-- <footer class="layout__footer">
 
-            <p class="layout__year">Ingenería GABAR <span>&copy;</span> <span id="current-year"></span></p>
-        </footer>
+            
+        </footer> -->
 
         <button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">
             <i class="fa-solid fa-arrow-up"></i>

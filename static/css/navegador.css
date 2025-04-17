@@ -177,13 +177,6 @@ body {
     border: 1px solid white;
 }
 
-.layout__year {
-    color: #ffffff;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
 
 /* Responsivo para pantallas grandes */
 @media (min-width: 1024px) {

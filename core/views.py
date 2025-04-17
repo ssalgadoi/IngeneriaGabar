@@ -6,7 +6,7 @@ from services.models import Services
 
 
 def index(request):
-    services = Services.objects.all()  # Obtiene todos los servicios
+    services = Services.objects.order_by('?')  # Obtiene todos los servicios
     return render(request, "core/index.html", { 'services': services })
 
 

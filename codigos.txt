@@ -1,20 +1,18 @@
 /* Contenedor general del slider */
 .slider__container {
-  
     padding: 90px 5%;
     width: 100%;
-    padding: 20px;
-    overflow: hidden; /* Oculta cualquier contenido que sobresalga horizontalmente */
+    overflow: hidden;
+    /* Fondo para destacar el slider */
 }
 
 .title__services {
     font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 700;
     color: rgb(255, 254, 254);
-    /* Color institucional */
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
     position: relative;
     text-align: center;
     margin-top: 4rem;
@@ -25,7 +23,6 @@
     width: 80px;
     height: 4px;
     background: rgb(50, 151, 67);
-    /* Color institucional */
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -33,14 +30,11 @@
     border-radius: 2px;
 }
 
-
-
-/* Contenedor del contenido deslizante */
+/* Contenedor del slider */
 .slide__content {
-    margin-bottom: 4rem;
     position: relative;
     width: 100%;
-    overflow: hidden; /* Previene que el contenido se desborde */
+    overflow: hidden;
 }
 
 /* Contenedor de las tarjetas adaptado a Swiper */
@@ -65,46 +59,20 @@
     justify-content: space-between;
 }
 
-/* Contenedor de las tarjetas, scroll horizontal con snapping */
-.card__wrapper {
-    display: flex;
-    overflow-x: auto; /* Permite desplazamiento horizontal */
-    scroll-snap-type: x mandatory; /* Obliga al snap a la tarjeta más cercana */
-    -webkit-overflow-scrolling: touch; /* Mejora scroll en iOS */
-    gap: 20px; /* Espacio entre tarjetas */
-    padding-bottom: 10px;
-    scroll-padding: 20px; /* Espacio antes del primer snap */
-}
-
-/* Tarjeta individual */
-.card {
-    flex: 0 0 auto; /* 🔥 Deja que el ancho sea automático */
-    width: 300px;
-    height: 500px;
-   
-    border-radius: 8px;
-    background: white;
-    overflow: hidden;
-    scroll-snap-align: start;
-    margin: 0 auto;
-}
-
-
-/* Contenedor de la imagen de la tarjeta */
+/* Imagen */
 .image__box {
     height: 200px;
     width: 100%;
 }
 
-/* Imagen dentro de la tarjeta */
 .image__box img {
     width: 100%;
     height: 100%;
-    border-radius: 8px 8px 0 0; /* Bordes redondeados solo arriba */
-    object-fit: cover; /* Recorta la imagen sin deformarla */
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
 }
 
-/* Contenido textual de la tarjeta */
+/* Contenido */
 .profile__details {
     padding: 15px;
 }
@@ -117,13 +85,13 @@
 
 .name__description {
     font-size: 14px;
-    color: #4d4d4d; /* Gris suave para descripción */
+    color: #4d4d4d;
 }
 
-/* Botón dentro de la tarjeta */
+/* Botón */
 .card__button {
-    margin-top: auto; /* Empuja el botón al final de la tarjeta */
-    padding: 5px 15px;
+    margin: 10px 15px 15px;
+    padding: 8px 15px;
     background-color: #1d690d;
     color: #e9e9e9;
     font-size: 16px;
@@ -133,12 +101,12 @@
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover del botón */
 .card__button:hover {
     background-color: #86be2c;
-    transform: scale(1.05); /* Efecto visual al pasar el mouse */
+    transform: scale(1.05);
     color: black;
 }
+
 /* Botones de navegación Swiper */
 .swiper-button-prev,
 .swiper-button-next {
@@ -150,20 +118,29 @@
     color: #86be2c;
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .title__services {
+        font-size: 2rem;
+    }
 
-@media (min-width: 1200px) {
-    .card {
-        width: 500px;  /* Ancho más grande en pantallas grandes */
-        height: 600px; /* Alto más grande en pantallas grandes */
+    .swiper-slide {
+        min-width: 260px;
+        max-width: 260px;
+    }
+
+    .card__button {
+        font-size: 14px;
+        padding: 6px 12px;
     }
 }
 
+@media (max-width: 480px) {
+    .title__services {
+        font-size: 1.8rem;
+    }
 
-
-
-
-
-/* 
-.swiper-slide {
-    width: auto !important;
-} */
+    .swiper-slide {
+        min-width: 220px;
+    }
+}
